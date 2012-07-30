@@ -13,3 +13,5 @@ Assumes you have a running Python/Django environment (tested on Python 2.7.1/Dja
 1. Start webserver: `python manage.py runserver`
 
 1. Browse to application: `http://localhost:8000/polls` or to admin site `http://localhost:8000/admin` (authenticate with `pypoll/pypoll`)
+
+
