@@ -1,9 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>{{ poll.question }}</h1>
 
-<ul>
-{% for choice in poll.choice_set.all %}
-    <li>{{ choice.choice }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-{% endfor %}
-</ul>
 
-<a href="/polls/{{ poll.id }}/">Vote again?</a>
+
+
+<table border="1">
+	<tr>
+		<th>Option</th>
+		<th>Votes</th> 
+	</tr>
+	
+	{% for choice in poll.choice_set.all %}
+		<tr>
+			<td> {{ choice.choice }} </td>
+			<td> {{ choice.votes }} vote{{ choice.votes|pluralize }} </td>
+		</tr>
+
+	{% endfor %}	 
+
+</table>
+<br />
+
+<a class="btn btn-primary" href="/polls/{{ poll.id }}/">Vote again?</a>
+
+{% endblock %}
